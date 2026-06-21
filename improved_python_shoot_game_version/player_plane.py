@@ -11,8 +11,8 @@ class PlayerShip(GameObject):
 
         super().__init__(self.image[0], initial_position, speed=8)
 
-        if self.rect:
-            self.rect.topleft = initial_position
+        self.rect = self.image[0].get_rect()
+        self.rect.topleft = initial_position
 
         self.bullets = pygame.sprite.Group()
         self.img_index = 0
@@ -26,8 +26,8 @@ class PlayerShip(GameObject):
     def is_hit(self, value):
         self._is_hit = bool(value)
 
-    def shoot(self, bullet_img):
-        new_bullet = Bullet(bullet_img, self.rect.midtop)
+    def shoot(self, bullet_image):
+        new_bullet = ShipBullets(bullet_image, self.rect.midtop)
         self.bullets.add(new_bullet)
 
     def move(self):

@@ -26,8 +26,8 @@ pygame.mixer.music.set_volume(0.25)
 background = pygame.image.load(os.path.join(BASE_DIR, 'resources', 'image', 'background.png')).convert()
 game_over = pygame.image.load(os.path.join(BASE_DIR, 'resources', 'image', 'gameover.png'))
 
-filename = pygame.image.load(os.path.join(BASE_DIR, 'resources', 'image', 'shoot.png'))
-plane_img = pygame.image.load(os.path.join(BASE_DIR, 'resources', 'image', 'shoot.png'))
+file_name = pygame.image.load(os.path.join(BASE_DIR, 'resources', 'image', 'shoot.png'))
+plane_image = pygame.image.load(os.path.join(BASE_DIR, 'resources', 'image', 'shoot.png'))
 
 
 player_rect = []
@@ -37,19 +37,19 @@ player_rect.append(pygame.Rect(165, 234, 102, 126))
 player_rect.append(pygame.Rect(330, 624, 102, 126))
 player_rect.append(pygame.Rect(330, 498, 102, 126))
 player_rect.append(pygame.Rect(432, 624, 102, 126))
-player_pos = [200, 600]
-player = PlayerShip(plane_img, player_rect, player_pos)
+player_position = [200, 600]
+player = PlayerShip(plane_image, player_rect, player_position)
 
 bullet_rect = pygame.Rect(1004, 987, 9, 21)
-bullet_img = plane_img.subsurface(bullet_rect)
+bullet_image = plane_image.subsurface(bullet_rect)
 
-enemy1_rect = pygame.Rect(534, 612, 57, 43)
-enemy1_img = plane_img.subsurface(enemy1_rect)
-enemy1_down_imgs = []
-enemy1_down_imgs.append(plane_img.subsurface(pygame.Rect(267, 347, 57, 43)))
-enemy1_down_imgs.append(plane_img.subsurface(pygame.Rect(873, 697, 57, 43)))
-enemy1_down_imgs.append(plane_img.subsurface(pygame.Rect(267, 296, 57, 43)))
-enemy1_down_imgs.append(plane_img.subsurface(pygame.Rect(930, 697, 57, 43)))
+enemy_1_rect = pygame.Rect(534, 612, 57, 43)
+enemy_1_img = plane_image.subsurface(enemy_1_rect)
+enemy_1_down_image = []
+enemy_1_down_image.append(plane_image.subsurface(pygame.Rect(267, 347, 57, 43)))
+enemy_1_down_image.append(plane_image.subsurface(pygame.Rect(873, 697, 57, 43)))
+enemy_1_down_image.append(plane_image.subsurface(pygame.Rect(267, 296, 57, 43)))
+enemy_1_down_image.append(plane_image.subsurface(pygame.Rect(930, 697, 57, 43)))
 
 enemies1 = pygame.sprite.Group()
 
@@ -72,14 +72,14 @@ while running:
     if not player.is_hit:
         if shoot_frequency % 15 == 0:
             bullet_sound.play()
-            player.shoot(bullet_img)
+            player.shoot(bullet_image)
         shoot_frequency += 1
         if shoot_frequency >= 15:
             shoot_frequency = 0
 
     if enemy_frequency % 50 == 0:
-        enemy1_pos = [random.randint(0, SCREEN_WIDTH - enemy1_rect.width), 0]
-        enemy1 = Enemy(enemy1_img, enemy1_down_imgs, enemy1_pos)
+        enemy1_pos = [random.randint(0, SCREEN_WIDTH - enemy_1_rect.width), 0]
+        enemy1 = EnemyShips(enemy_1_img, enemy_1_down_image, enemy1_pos)
         enemies1.add(enemy1)
     enemy_frequency += 1
     if enemy_frequency >= 100:
