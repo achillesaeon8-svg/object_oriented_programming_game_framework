@@ -173,4 +173,4 @@ text_rect.centery = screen.get_rect().centery + 24
 screen.blit(game_over, (0, 0))
 screen.blit(text, text_rect)
 
-    pygame.display.update()
+pygame.display.update()
