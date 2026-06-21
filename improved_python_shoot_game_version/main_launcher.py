@@ -38,7 +38,7 @@ player_rect.append(pygame.Rect(330, 624, 102, 126))
 player_rect.append(pygame.Rect(330, 498, 102, 126))
 player_rect.append(pygame.Rect(432, 624, 102, 126))
 player_pos = [200, 600]
-player = Player(plane_img, player_rect, player_pos)
+player = PlayerShip(plane_img, player_rect, player_pos)
 
 bullet_rect = pygame.Rect(1004, 987, 9, 21)
 bullet_img = plane_img.subsurface(bullet_rect)
