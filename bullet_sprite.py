@@ -1,3 +1,6 @@
+import pygame
+from core_abstract_blueprint import GameObject
+
 class Bullet(pygame.sprite.Sprite):
     def __init__(self, bullet_img, init_pos):
         pygame.sprite.Sprite.__init__(self)
