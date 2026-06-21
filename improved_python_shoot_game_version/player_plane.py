@@ -4,18 +4,19 @@ from core_abstract_blueprint import GameObject
 from bullet_sprite import Bullet
 from global_configuration_constants import SCREEN_WIDTH, SCREEN_HEIGHT
 
-class Player(pygame.sprite.Sprite):
+class Player(GameObject):
     def __init__(self, plane_img, player_rect, init_pos):
-        pygame.sprite.Sprite.__init__(self)
-        self.image = []                                 # 用来存储玩家对象精灵图片的列表
-        for i in range(len(player_rect)):
-            self.image.append(plane_img.subsurface(player_rect[i]).convert_alpha())
-        self.rect = player_rect[0]                      # 初始化图片所在的矩形
-        self.rect.topleft = init_pos                    # 初始化矩形的左上角坐标
-        self.speed = 8                                  # 初始化玩家速度，这里是一个确定的值
-        self.bullets = pygame.sprite.Group()            # 玩家飞机所发射的子弹的集合
-        self.img_index = 0                              # 玩家精灵图片索引
-        self.is_hit = False                             # 玩家是否被击中
+
+        self.image = [plane_img.subsurface(rect).convert_alpha() for rect in player_rect]
+
+        super().__init__(self.image[0], init_pos, speed=8)
+
+        if self.rect:
+            self.rect.topleft = init_pos
+
+        self.bullets = pygame.sprite.Group()
+        self.img_index = 0
+        self.is_hit = False
 
     def shoot(self, bullet_img):
         bullet = Bullet(bullet_img, self.rect.midtop)
