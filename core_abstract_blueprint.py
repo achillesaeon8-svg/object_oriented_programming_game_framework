@@ -18,3 +18,7 @@ class GameObject(pygame.sprite.Sprite, ABC):
         if value < 0:
             raise ValueError('Speed cannot be negative')
         self._speed = value
+
+    @abstractmethod
+    def move(self):
+        pass
