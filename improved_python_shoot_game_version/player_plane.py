@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import pygame
 from core_abstract_blueprint import GameObject
 from bullet_sprite import ShipBullets
@@ -7,9 +6,11 @@ from global_configuration_constants import SCREEN_WIDTH, SCREEN_HEIGHT
 class PlayerShip(GameObject):
     def __init__(self, plane_image, player_rectangles, initial_position):
 
-        self.image = [plane_image.subsurface(rect).convert_alpha() for rect in player_rectangles]
+        surface_frames = [plane_image.subsurface(rect).convert_alpha() for rect in player_rectangles]
 
-        super().__init__(self.image[0], initial_position, speed=8)
+        super().__init__(surface_frames[0], initial_position, speed=8)
+
+        self.image = surface_frames
 
         self.rect = self.image[0].get_rect()
         self.rect.topleft = initial_position
