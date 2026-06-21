@@ -18,10 +18,21 @@ class Player(GameObject):
         self.img_index = 0
         self.is_hit = False
 
-    def shoot(self, bullet_img):
-        bullet = Bullet(bullet_img, self.rect.midtop)
-        self.bullets.add(bullet)
+    @property
+    def is_hit(self):
+        return self._is_hit
 
+    @is_hit.setter
+    def is_hit(self, value):
+        self._is_hit = bool(value)
+
+    def shoot(self, bullet_img):
+        new_bullet = Bullet(bullet_img, self.rect.midtop)
+        self.bullets.add(new_bullet)
+
+    def move(self):
+        pass
+    
     def moveUp(self):
         if self.rect.top <= 0:
             self.rect.top = 0
