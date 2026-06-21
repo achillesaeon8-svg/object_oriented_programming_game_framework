@@ -8,7 +8,7 @@ Created on Wed Sep 11 11:05:00 2013
 import pygame
 from sys import exit
 from pygame.locals import *
-from gameRole import *
+from improved_python_shoot_game_version.player_plane import *
 import random
 import os
 

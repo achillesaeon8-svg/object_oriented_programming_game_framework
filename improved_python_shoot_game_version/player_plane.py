@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Sep 11 16:36:03 2013
-
-@author: Leo
-"""
-
 import pygame
+from core_abstract_blueprint import GameObject
+from bullet_sprite import Bullet
+from global_configuration_constants import SCREEN_WIDTH, SCREEN_HEIGHT
 
 class Player(pygame.sprite.Sprite):
     def __init__(self, plane_img, player_rect, init_pos):
@@ -47,17 +44,3 @@ class Player(pygame.sprite.Sprite):
             self.rect.left = SCREEN_WIDTH - self.rect.width
         else:
             self.rect.left += self.speed
-
-# 敌人类
-class Enemy(pygame.sprite.Sprite):
-    def __init__(self, enemy_img, enemy_down_imgs, init_pos):
-       pygame.sprite.Sprite.__init__(self)
-       self.image = enemy_img
-       self.rect = self.image.get_rect()
-       self.rect.topleft = init_pos
-       self.down_imgs = enemy_down_imgs
-       self.speed = 2
-       self.down_index = 0
-
-    def move(self):
-        self.rect.top += self.speed
