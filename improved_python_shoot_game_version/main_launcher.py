@@ -40,11 +40,9 @@ player_rect.append(pygame.Rect(432, 624, 102, 126))
 player_pos = [200, 600]
 player = Player(plane_img, player_rect, player_pos)
 
-# 定义子弹对象使用的surface相关参数
 bullet_rect = pygame.Rect(1004, 987, 9, 21)
 bullet_img = plane_img.subsurface(bullet_rect)
 
-# 定义敌机对象使用的surface相关参数
 enemy1_rect = pygame.Rect(534, 612, 57, 43)
 enemy1_img = plane_img.subsurface(enemy1_rect)
 enemy1_down_imgs = []
@@ -55,7 +53,6 @@ enemy1_down_imgs.append(plane_img.subsurface(pygame.Rect(930, 697, 57, 43)))
 
 enemies1 = pygame.sprite.Group()
 
-# 存储被击毁的飞机，用来渲染击毁精灵动画
 enemies_down = pygame.sprite.Group()
 
 shoot_frequency = 0
@@ -80,7 +77,6 @@ while running:
         if shoot_frequency >= 15:
             shoot_frequency = 0
 
-    # 生成敌机
     if enemy_frequency % 50 == 0:
         enemy1_pos = [random.randint(0, SCREEN_WIDTH - enemy1_rect.width), 0]
         enemy1 = Enemy(enemy1_img, enemy1_down_imgs, enemy1_pos)
