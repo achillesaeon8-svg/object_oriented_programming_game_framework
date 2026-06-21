@@ -69,6 +69,11 @@ running = True
 while running:
     clock.tick(45)
 
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            exit()
+            
     if not player.is_hit:
         if shoot_frequency % 15 == 0:
             bullet_sound.play()
@@ -168,9 +173,4 @@ text_rect.centery = screen.get_rect().centery + 24
 screen.blit(game_over, (0, 0))
 screen.blit(text, text_rect)
 
-while 1:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            exit()
     pygame.display.update()
