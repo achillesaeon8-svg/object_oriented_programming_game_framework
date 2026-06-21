@@ -7,19 +7,6 @@ Created on Wed Sep 11 16:36:03 2013
 
 import pygame
 
-# 子弹类
-class Bullet(pygame.sprite.Sprite):
-    def __init__(self, bullet_img, init_pos):
-        pygame.sprite.Sprite.__init__(self)
-        self.image = bullet_img
-        self.rect = self.image.get_rect()
-        self.rect.midbottom = init_pos
-        self.speed = 10
-
-    def move(self):
-        self.rect.top -= self.speed
-
-# 玩家类
 class Player(pygame.sprite.Sprite):
     def __init__(self, plane_img, player_rect, init_pos):
         pygame.sprite.Sprite.__init__(self)
