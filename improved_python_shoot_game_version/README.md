@@ -1,33 +1,21 @@
-# PythonShootGame
+# PythonShootGame - Improved OOP Version
 
-A simple shoot game written in Python.
+A refactored, object-oriented take on the classic plane shooting game using Pygame. This version transforms the original procedural code into a modular architecture using an abstract base class, significantly improving maintainability and clean inheritance.
 
-# Introduction
+## ℹ️ Project Origin
+This project is an evolution of the [PythonShootGame by Kill-Console](https://github.com/Kill-Console/PythonShootGame). 
 
-This project only include two simple .py files: 
+My version refactors the original code to implement an object-oriented architecture, improving modularity and maintainability through the use of abstract base classes and centralized configuration.
 
-1. mainGame.py: The initialization and main loop of the game.
-2. gameRole.py: Class of the game role.
+## 🏗️ Project Architecture
+* `core_abstract_blueprint.py`: Contains the `GameObject` abstract base class, establishing the foundation for all game entities.
+* `player_plane.py`: Defines the `PlayerShip` class, handling player movement and shooting mechanics.
+* `enemy_sprite.py`: Defines the `EnemyShips` class.
+* `bullet_sprite.py`: Defines the `ShipBullets` class.
+* `main_launcher.py`: The entry point, containing the game loop, event management, and rendering engine.
+* `global_configuration_constants.py`: Centralized configuration for screen dimensions and global constants.
 
-# Requirement
-
-1. Python 2.7
-2. Python-Pygame
-  
-# How To Start Game
-  
-```bash
-$ python mainGame.py
-```
-
-# License
-GPL
-
-# Screeshot
-
-![](http://s2.postimg.org/728c1wy4p/Screenshot_5.png)
-
-![](http://s30.postimg.org/fflxcv9ld/Screenshot_6.png)
-
-# Doc
-[使用Pygame制作微信打飞机游戏PC版](https://www.cnblogs.com/dukeleo/p/3339780.html) (a Chinese startup)
+## 🚀 How to Start
+1. Ensure you have `pygame` installed:
+   ```bash
+   pip install pygame
