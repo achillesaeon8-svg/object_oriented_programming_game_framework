@@ -1,3 +1,6 @@
+import pygame
+from core_abstract_blueprint import GameObject
+
 class Enemy(pygame.sprite.Sprite):
     def __init__(self, enemy_img, enemy_down_imgs, init_pos):
        pygame.sprite.Sprite.__init__(self)
