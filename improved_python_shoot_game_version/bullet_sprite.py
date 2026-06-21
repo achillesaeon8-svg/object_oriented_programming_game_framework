@@ -1,5 +1,5 @@
 import pygame
-from improved_python_shoot_game_version.core_abstract_blueprint import GameObject
+from core_abstract_blueprint import GameObject
 
 class ShipBullets(pygame.sprite.Sprite):
     def __init__(self, bullet_imgage, initial_position):

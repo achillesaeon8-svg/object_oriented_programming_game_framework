@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import pygame
 from core_abstract_blueprint import GameObject
-from bullet_sprite import Bullet
+from bullet_sprite import ShipBullets
 from global_configuration_constants import SCREEN_WIDTH, SCREEN_HEIGHT
 
 class PlayerShip(GameObject):
