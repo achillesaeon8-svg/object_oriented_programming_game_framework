@@ -7,13 +7,6 @@ Created on Wed Sep 11 16:36:03 2013
 
 import pygame
 
-SCREEN_WIDTH = 480
-SCREEN_HEIGHT = 800
-
-TYPE_SMALL = 1
-TYPE_MIDDLE = 2
-TYPE_BIG = 3
-
 # 子弹类
 class Bullet(pygame.sprite.Sprite):
     def __init__(self, bullet_img, init_pos):
