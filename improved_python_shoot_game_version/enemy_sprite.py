@@ -1,15 +1,9 @@
 import pygame
 from core_abstract_blueprint import GameObject
 
-class Enemy(pygame.sprite.Sprite):
+class Enemy(GameObject):
     def __init__(self, enemy_img, enemy_down_imgs, init_pos):
-       pygame.sprite.Sprite.__init__(self)
-       self.image = enemy_img
-       self.rect = self.image.get_rect()
-       self.rect.topleft = init_pos
-       self.down_imgs = enemy_down_imgs
-       self.speed = 2
-       self.down_index = 0
+       super().__init__(enemy_img, init_pos, speed=2)
 
     def move(self):
         self.rect.top += self.speed
