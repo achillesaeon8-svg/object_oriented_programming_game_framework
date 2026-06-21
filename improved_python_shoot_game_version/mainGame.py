@@ -31,7 +31,7 @@ pygame.mixer.music.play(-1, 0.0)
 pygame.mixer.music.set_volume(0.25)
 
 # 载入背景图
-background = pygame.image.load('resources/image/background.png').convert()
+background = pygame.image.load(os.path.join(BASE_DIR, 'resources', 'image', 'background.png').convert())
 game_over = pygame.image.load('resources/image/gameover.png')
 
 filename = 'resources/image/shoot.png'
