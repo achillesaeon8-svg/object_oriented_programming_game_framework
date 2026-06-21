@@ -20,13 +20,13 @@ screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption('飞机大战')
 
 # 载入游戏音乐
-bullet_sound = pygame.mixer.Sound(BASE_DIR, 'resources', 'sound', 'bullet.wav')
-enemy1_down_sound = pygame.mixer.Sound(BASE_DIR, 'resources', 'sound', 'enemy1_down.wav')
-game_over_sound = pygame.mixer.Sound(BASE_DIR, 'resources', 'sound', 'game_over.wav')
+bullet_sound = pygame.mixer.Sound(os.path.join(BASE_DIR, 'resources', 'sound', 'bullet.wav'))
+enemy1_down_sound = pygame.mixer.Sound(os.path.join(BASE_DIR, 'resources', 'sound', 'enemy1_down.wav'))
+game_over_sound = pygame.mixer.Sound(os.path.join(BASE_DIR, 'resources', 'sound', 'game_over.wav'))
 bullet_sound.set_volume(0.3)
 enemy1_down_sound.set_volume(0.3)
 game_over_sound.set_volume(0.3)
-pygame.mixer.music.load(BASE_DIR, 'resources', 'sound', 'game_music.wav')
+pygame.mixer.music.load(os.path.join(BASE_DIR, 'resources', 'sound', 'game_music.wav'))
 pygame.mixer.music.play(-1, 0.0)
 pygame.mixer.music.set_volume(0.25)
 
