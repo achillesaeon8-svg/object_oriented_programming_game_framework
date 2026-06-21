@@ -26,7 +26,7 @@ game_over_sound = pygame.mixer.Sound(BASE_DIR, 'resources', 'sound', 'game_over.
 bullet_sound.set_volume(0.3)
 enemy1_down_sound.set_volume(0.3)
 game_over_sound.set_volume(0.3)
-pygame.mixer.music.load('resources/sound/game_music.wav')
+pygame.mixer.music.load(BASE_DIR, 'resources', 'sound', 'game_music.wav')
 pygame.mixer.music.play(-1, 0.0)
 pygame.mixer.music.set_volume(0.25)
 
