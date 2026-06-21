@@ -4,15 +4,15 @@ from core_abstract_blueprint import GameObject
 from bullet_sprite import Bullet
 from global_configuration_constants import SCREEN_WIDTH, SCREEN_HEIGHT
 
-class Player(GameObject):
-    def __init__(self, plane_img, player_rect, init_pos):
+class PlayerShip(GameObject):
+    def __init__(self, plane_image, player_rectangles, initial_position):
 
-        self.image = [plane_img.subsurface(rect).convert_alpha() for rect in player_rect]
+        self.image = [plane_image.subsurface(rect).convert_alpha() for rect in player_rectangles]
 
-        super().__init__(self.image[0], init_pos, speed=8)
+        super().__init__(self.image[0], initial_position, speed=8)
 
         if self.rect:
-            self.rect.topleft = init_pos
+            self.rect.topleft = initial_position
 
         self.bullets = pygame.sprite.Group()
         self.img_index = 0
@@ -32,7 +32,7 @@ class Player(GameObject):
 
     def move(self):
         pass
-    
+
     def moveUp(self):
         if self.rect.top <= 0:
             self.rect.top = 0

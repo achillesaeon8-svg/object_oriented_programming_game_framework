@@ -4,8 +4,8 @@ from pygame.locals import *
 import random
 import os
 from global_configuration_constants import SCREEN_WIDTH, SCREEN_HEIGHT
-from player_plane import Player
-from enemy_sprite import Enemy
+from player_plane import PlayerShip
+from enemy_sprite import EnemyShips
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
