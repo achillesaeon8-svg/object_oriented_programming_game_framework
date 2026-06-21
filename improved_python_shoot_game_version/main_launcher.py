@@ -44,7 +44,7 @@ bullet_rect = pygame.Rect(1004, 987, 9, 21)
 bullet_image = plane_image.subsurface(bullet_rect)
 
 enemy_1_rect = pygame.Rect(534, 612, 57, 43)
-enemy_1_img = plane_image.subsurface(enemy_1_rect)
+enemy_1_image = plane_image.subsurface(enemy_1_rect)
 enemy_1_down_image = []
 enemy_1_down_image.append(plane_image.subsurface(pygame.Rect(267, 347, 57, 43)))
 enemy_1_down_image.append(plane_image.subsurface(pygame.Rect(873, 697, 57, 43)))
@@ -78,8 +78,8 @@ while running:
             shoot_frequency = 0
 
     if enemy_frequency % 50 == 0:
-        enemy1_pos = [random.randint(0, SCREEN_WIDTH - enemy_1_rect.width), 0]
-        enemy1 = EnemyShips(enemy_1_img, enemy_1_down_image, enemy1_pos)
+        enemy_1_position = [random.randint(0, SCREEN_WIDTH - enemy_1_rect.width), 0]
+        enemy1 = EnemyShips(enemy_1_image, enemy_1_down_image, enemy_1_position)
         enemies1.add(enemy1)
     enemy_frequency += 1
     if enemy_frequency >= 100:
